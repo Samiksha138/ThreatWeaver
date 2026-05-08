@@ -1,8 +1,8 @@
-# ThreatWeaver — AI-Powered Threat Modeling (VS Code & Cursor IDE)
+# ThreatWeaver — AI Threat Modeling (VS Code & Cursor IDE)
 
-**Automated Threat Modeling/Security Analysis for Development Teams**
+**Automated Security Analysis for Development Teams**
 
-A powerful extension tool that brings automated threat modeling directly into your development environment. Works seamlessly with both **VS Code** and **Cursor IDE**. Analyze STRIDE based security threats from your Confluence based functional specs and code (PRs and diffs), generate comprehensive reports using Atlassian MCP - all without leaving your editor.
+A powerful extension that brings automated threat modeling directly into your development environment. Works seamlessly with both **VS Code** and **Cursor IDE**. Analyze security threats, generate comprehensive reports, and integrate with Atlassian Confluence — all without leaving your editor.
 
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg)
 ![Cursor IDE](https://img.shields.io/badge/Cursor%20IDE-Compatible-brightgreen.svg)
@@ -523,7 +523,7 @@ The `/full-threat-pipeline` skill uses a 9-phase state machine persisted in `pip
 
 ## 💬 Support
 
-- **Issues**: [GitHub Issues](https://github.com/Samiksha138/ThreatWeaver/issues) or email samiksha138@gmail.com
+- **Issues**: [GitHub Issues]( or email samiksha138@gmail.com
 - **Documentation**: Available in the repository
 
 ---
