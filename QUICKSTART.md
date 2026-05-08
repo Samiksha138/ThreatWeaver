@@ -20,7 +20,7 @@ https://github.com/Samiksha138/ThreatWeaver/assets/ThreatWeaver_Walkthrough.mp4
 
 ## ⚡ Installation (2 minutes)
 
-1. Download **`threatweaver-latest.vsix`** from [GitHub Releases](https://github.com/Samiksha138/ThreatWeaver/releases)
+1. Download **`threatweaver-latest.vsix`** from [GitHub Releases](https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/threatweaver-latest.vsix)
 2. Open **VS Code** or **Cursor IDE**
 3. Go to **Extensions** → `⋯` menu → **"Install from VSIX…"**
 4. Select the downloaded file — done ✅

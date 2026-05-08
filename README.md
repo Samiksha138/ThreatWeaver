@@ -12,13 +12,11 @@ A powerful extension tool that brings automated threat modeling directly into yo
 
 ## 🎬 Demo
 
-Preview (click to open Releases page):
-
-[![Demo Walkthrough](resources/demo_walkthrough.gif)](https://github.com/Samiksha138/ThreatWeaver/releases/latest)
-
 Download the full MP4 from the latest release:
 
-https://github.com/Samiksha138/ThreatWeaver/releases/latest/download/ThreatWeaver_Walkthrough.mp4
+![ThreatWeaver Demo](resources/ThreatWeaver_Walkthrough.mp4)
+
+https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/ThreatWeaver_Walkthrough.mp4
 
 ---
 
