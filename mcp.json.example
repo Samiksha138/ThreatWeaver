@@ -1,0 +1,19 @@
+{
+	"inputs": [],
+	"servers": {
+		"atlassian": {
+			"type": "stdio",
+			"command": "npx",
+			"args": ["-y", "mcp-remote@latest", "https://mcp.atlassian.com/v1/mcp"]
+		},
+		"jira_oss": {
+			"type": "stdio",
+			"command": "npx",
+			"args": ["-y", "@aashari/mcp-server-atlassian-jira"],
+			"env": {
+				"ATLASSIAN_SITE_URL": "https://jira.your-company.com",
+				"ATLASSIAN_API_TOKEN": "<your-jira-pat>"
+			}
+		}
+	}
+}

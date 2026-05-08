@@ -1,0 +1,32 @@
+.vscode/**
+.vscode-test/**
+out/**
+node_modules/**
+src/**
+.gitignore
+.yarnrc
+esbuild.js
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/eslint.config.mjs
+**/*.map
+**/*.ts
+**/.vscode-test.*
+!.github/**
+
+# Build artifacts & caches
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Debug/test artifacts
+scripts/**
+_evaluated_webview.html
+_test_*.html
+_test_*.js
+
+# Docs not needed in VSIX
+docs/**
+FUNCTIONAL_SPEC.md
+
+# Build helper scripts
+build-latest.ps1

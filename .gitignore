@@ -1,0 +1,55 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+*.tsbuildinfo
+
+# Security - Sensitive files
+.env
+.env.*
+*.pem
+*.key
+*.crt
+secrets.json
+credentials.json
+mcp.json
+gitleaks-report.json
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.temp/
+
+# Debug/test artifacts
+_evaluated_webview.html
+_test_*.html
+_test_*.js
+scripts/

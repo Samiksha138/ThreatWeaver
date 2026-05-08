@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"module": "Node16",
+		"target": "ES2022",
+		"lib": [
+			"ES2022"
+		],
+		"types": [
+			"node",
+			"mocha"
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true,
+		"skipLibCheck": true,
+		"incremental": true,
+		"tsBuildInfoFile": ".tsbuildinfo"
+		/* Additional Checks */
+		// "noImplicitReturns": true,
+		// "noFallthroughCasesInSwitch": true,
+		// "noUnusedParameters": true,
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"out",
+		"dist",
+		"threat-modeling-platform"
+	]
+}

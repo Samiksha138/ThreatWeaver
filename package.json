@@ -1,0 +1,200 @@
+{
+  "name": "threatweaver",
+  "displayName": "ThreatWeaver",
+  "description": "Automated threat modeling tool with Copilot Chat and Atlassian MCP integration (VS Code & Cursor IDE)",
+  "version": "0.0.1",
+  "publisher": "ThreatWeaver",
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Samiksha138/ThreatWeaver"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "threat-modeling",
+          "title": "Threat Modeling",
+          "icon": "resources/shield-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "threat-modeling": [
+        {
+          "id": "threatweaver.threatModelingDashboard",
+          "name": "Dashboard",
+          "type": "webview",
+          "icon": "resources/shield-icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ai-threat-modeling.configureMCP",
+        "title": "Configure MCP Server",
+        "category": "Threat Modeling",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "ai-threat-modeling.openDashboard",
+        "title": "Open Threat Modeling Dashboard",
+        "category": "Threat Modeling",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "ai-threat-modeling.startMCP",
+        "title": "Start MCP Confluence Server",
+        "category": "Threat Modeling"
+      },
+      {
+        "command": "ai-threat-modeling.stopMCP",
+        "title": "Stop MCP Confluence Server",
+        "category": "Threat Modeling"
+      },
+      {
+        "command": "ai-threat-modeling.setTokens",
+        "title": "Set MCP Credentials",
+        "category": "Threat Modeling",
+        "icon": "$(key)"
+      },
+      {
+        "command": "ai-threat-modeling.startPRWatcher",
+        "title": "Start PR Watcher",
+        "category": "Threat Modeling",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "ai-threat-modeling.stopPRWatcher",
+        "title": "Stop PR Watcher",
+        "category": "Threat Modeling",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "ai-threat-modeling.startConfluenceWatcher",
+        "title": "Start Confluence Watcher",
+        "category": "Threat Modeling",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "ai-threat-modeling.stopConfluenceWatcher",
+        "title": "Stop Confluence Watcher",
+        "category": "Threat Modeling",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "ai-threat-modeling.reanalyzeConfluence",
+        "title": "Re-analyze Confluence Changes",
+        "category": "Threat Modeling",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "ai-threat-modeling.scanWorkspace",
+        "title": "Scan Workspace for Threat Analysis",
+        "category": "Threat Modeling",
+        "icon": "$(search)"
+      },
+      {
+        "command": "ai-threat-modeling.validateAnalysis",
+        "title": "Validate Threat Analysis",
+        "category": "Threat Modeling",
+        "icon": "$(check)"
+      },
+      {
+        "command": "ai-threat-modeling.addLesson",
+        "title": "Add Lesson to Knowledge Base",
+        "category": "Threat Modeling",
+        "icon": "$(book)"
+      }
+    ],
+    "configuration": {
+      "title": "AI Threat Modeling",
+      "properties": {
+        "aiThreatModeling.mcpConfigPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Custom absolute path to your `mcp.json` file. When empty, the extension auto-detects the default location for your OS and IDE (VS Code or Cursor)."
+        },
+        "aiThreatModeling.prWatchInterval": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 60,
+          "markdownDescription": "Interval in **minutes** between PR polling checks. Lower values mean faster detection but more API calls."
+        },
+        "aiThreatModeling.confluenceWatchInterval": {
+          "type": "number",
+          "default": 1,
+          "minimum": 1,
+          "maximum": 60,
+          "markdownDescription": "Interval in **minutes** between Confluence page polling checks. Lower values mean faster detection but more API calls."
+        },
+        "aiThreatModeling.autoUpdateEnabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Automatically check **GitHub Releases** for newer versions of this extension on startup."
+        },
+        "aiThreatModeling.autoUpdateIntervalHours": {
+          "type": "number",
+          "default": 6,
+          "minimum": 1,
+          "maximum": 168,
+          "markdownDescription": "How often (in **hours**) to check for updates. Default is every 6 hours."
+        },
+        "aiThreatModeling.githubRepo": {
+          "type": "string",
+          "default": "Samiksha138/ThreatWeaver",
+          "markdownDescription": "GitHub `owner/repo` to check for release updates (e.g. `Samiksha138/ThreatWeaver`)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "node ./node_modules/typescript/bin/tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "node ./node_modules/typescript/bin/tsc -p . --outDir out",
+    "watch-tests": "node ./node_modules/typescript/bin/tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "node ./node_modules/typescript/bin/tsc --noEmit",
+    "lint": "node ./node_modules/eslint/bin/eslint.js src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/nodemailer": "^8.0.0",
+    "@types/pdfkit": "^0.17.3",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.7.1",
+    "docx": "^9.6.1",
+    "esbuild": "^0.27.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-security": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "nodemailer": "^8.0.4",
+    "pdfkit": "^0.18.0"
+  },
+  "overrides": {
+    "diff": "^8.0.3",
+    "serialize-javascript": "^7.0.5"
+  }
+}
