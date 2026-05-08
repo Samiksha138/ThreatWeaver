@@ -10,6 +10,20 @@ A powerful extension tool that brings automated threat modeling directly into yo
 
 ---
 
+## 🎬 Demo
+
+https://github.com/Samiksha138/ThreatWeaver/assets/ThreatWeaver_Walkthrough.mp4
+
+---
+
+## 📐 Architecture
+
+![ThreatWeaver Architecture](resources/Architecture_diagram.png)
+
+> New here? Start with the **[Quick Start Guide](QUICKSTART.md)** for a step-by-step walkthrough.
+
+---
+
 ## ✨ Key Features
 
 - **AI-Powered Threat Analysis** — STRIDE-based security analysis via GitHub Copilot with dual-level assessment (code + design)
@@ -278,7 +292,7 @@ Data sourced from `threat-analysis.md` files — refreshes automatically when th
 | `aiThreatModeling.confluenceWatchInterval` | `1` min | Confluence polling interval (1–60 min) |
 | `aiThreatModeling.autoUpdateEnabled` | `true` | Check GitHub Releases for updates on startup |
 | `aiThreatModeling.autoUpdateIntervalHours` | `6` hrs | Update check frequency (1–168 hrs) |
-| `aiThreatModeling.githubRepo` | `CSC-Security-sandbox/AI-Threat-Modeling` | GitHub `owner/repo` for release updates |
+| `aiThreatModeling.githubRepo` | `Samiksha138/ThreatWeaver` | GitHub `owner/repo` for release updates |
 
 ---
 
