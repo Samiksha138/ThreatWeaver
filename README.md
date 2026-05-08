@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ThreatWeaver — AI-Powered Threat Modeling (VS Code & Cursor IDE)
 
 **Automated Threat Modeling/Security Analysis for Development Teams**
@@ -13,7 +12,13 @@ A powerful extension tool that brings automated threat modeling directly into yo
 
 ## 🎬 Demo
 
-https://github.com/Samiksha138/ThreatWeaver/assets/ThreatWeaver_Walkthrough.mp4
+Preview (click to open Releases page):
+
+[![Demo Walkthrough](resources/demo_walkthrough.gif)](https://github.com/Samiksha138/ThreatWeaver/releases/latest)
+
+Download the full MP4 from the latest release:
+
+https://github.com/Samiksha138/ThreatWeaver/releases/latest/download/ThreatWeaver_Walkthrough.mp4
 
 ---
 
