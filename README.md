@@ -68,7 +68,7 @@ https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/ThreatWeave
 > **Note**: Atlassian email and API token are **required** to publish threat models to Confluence (including draw.io diagrams). Generate your token at [id.atlassian.com](https://id.atlassian.com/manage-profile/security/api-tokens).
 
 ### Install from VSIX
-1. Download `threatweaver-latest.vsix`
+1. Download `threatweaver-latest.vsix` - [GitHub Releases](https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/threatweaver-latest.vsix)
 2. Open VS Code or Cursor IDE
 3. Go to Extensions → ⋯ menu → **"Install from VSIX..."**
 4. Select the downloaded file
