@@ -51,7 +51,7 @@ Click **"▶️ Start MCP Servers"** in the sidebar.
 
 Wait for: *"✅ MCP Servers are running"*
 
-<!-- SCREENSHOT: Sidebar showing MCP servers online status -->
+<img width="346" height="35" alt="image" src="https://github.com/user-attachments/assets/15ca4cdc-18a3-4721-a43f-3a121ea9439d" />
 
 ---
 
@@ -61,7 +61,7 @@ Wait for: *"✅ MCP Servers are running"*
 
 Click **"🛡️ Open Dashboard"** in the sidebar.
 
-<!-- SCREENSHOT: Dashboard overview — Products tab -->
+<img width="972" height="482" alt="image" src="https://github.com/user-attachments/assets/11722549-1610-4126-bba0-8b854b563d34" />
 
 ---
 
@@ -70,7 +70,7 @@ Click **"🛡️ Open Dashboard"** in the sidebar.
 1. **Products** tab → **"+ Add Product"**
 2. Enter a name (e.g., `PaymentService`) and select your workspace folder
 
-<!-- SCREENSHOT: Add Product dialog -->
+<img width="733" height="476" alt="image" src="https://github.com/user-attachments/assets/f528149a-15a4-4de8-8340-4673789bd319" />
 
 ---
 
@@ -89,7 +89,7 @@ Click **"+ Add Feature"** under your product and fill in:
 
 > At least one URL (Confluence or Repository) is required.
 
-<!-- SCREENSHOT: Add Feature form -->
+<img width="725" height="512" alt="image" src="https://github.com/user-attachments/assets/ce1275f6-17d1-478f-8524-eaeaf73a355b" />
 
 ---
 
@@ -99,9 +99,9 @@ Click **"+ Add Feature"** under your product and fill in:
 2. Click **"🔍 Analyze Threats"** on your feature
 3. Copilot Chat opens with the STRIDE analysis prompt — let it run
 
-<!-- SCREENSHOT: Threats tab with Analyze button -->
+<img width="725" height="505" alt="image" src="https://github.com/user-attachments/assets/aabd6cc4-73fc-41c8-9f19-658efbd8c088" />
 
-<!-- SCREENSHOT: Copilot Chat running the analysis -->
+<img width="259" height="604" alt="image" src="https://github.com/user-attachments/assets/3f160ce4-c280-4532-b1a9-c9fb373d7588" />
 
 ---
 
@@ -113,9 +113,11 @@ Click **"+ Add Feature"** under your product and fill in:
 | **Publish to Confluence** | Threats | Writes threat model back to your wiki with DFD attached |
 | **Create Jira Issues** | Threats | Auto-creates tickets for all Critical/High threats |
 
-<!-- SCREENSHOT: Generated HTML report -->
 
-<!-- SCREENSHOT: Confluence page with published threat model -->
+<img width="1195" height="719" alt="image" src="https://github.com/user-attachments/assets/503780e6-9526-4322-9570-c05824ffc275" />
+
+
+<img width="794" height="701" alt="image" src="https://github.com/user-attachments/assets/7ce7de4a-6556-4ac5-bded-90f334596b00" />
 
 ---
 
@@ -139,7 +141,9 @@ Attach the `@threat-modeler.md` agent file and type `/full-threat-pipeline`.
 
 > 💡 After using Chat, click **"⟳ Scan Workspace"** in the Products tab to import results into the Dashboard automatically.
 
-<!-- SCREENSHOT: Copilot Chat using @threat-modeler agent -->
+
+<img width="212" height="569" alt="image" src="https://github.com/user-attachments/assets/97a5da61-25af-47e8-925f-7c4b03903e1e" />
+
 
 ---
 
@@ -152,7 +156,9 @@ Set it and forget it. ThreatWeaver watches for changes and triggers analysis aut
 | **PR Watch** | Threats tab → 🔀 checkbox | Detects new/updated PRs every 5 min → auto-analyzes |
 | **Doc Watch** | Threats tab → 📄 checkbox | Detects Confluence spec changes → auto-triggers delta re-analysis |
 
-<!-- SCREENSHOT: Threats tab with PR Watch and Doc Watch toggles enabled -->
+
+<img width="725" height="454" alt="image" src="https://github.com/user-attachments/assets/22bdebba-e188-4650-a4e5-62c3bb4e213b" />
+
 
 ---
 
