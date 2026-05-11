@@ -41,7 +41,7 @@ Click the **🛡️ Shield icon** in the sidebar → **"🔑 Configure Credentia
 
 > 💡 Atlassian credentials are **required** for Confluence publish. GitHub/Jira are optional.
 
-<!-- SCREENSHOT: Credentials panel with fields filled in -->
+<img width="841" height="506" alt="image" src="https://github.com/user-attachments/assets/cba8a834-5f17-4917-ac1d-f9084b24d425" />
 
 ---
 
