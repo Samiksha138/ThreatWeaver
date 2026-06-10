@@ -1,22 +1,19 @@
 # ThreatWeaver — AI-Powered Threat Modeling (VS Code & Cursor IDE)
 
-**Automated Threat Modeling/Security Analysis for Development Teams**
-
-A powerful extension tool that brings automated threat modeling directly into your development environment. Works seamlessly with both **VS Code** and **Cursor IDE**. Analyze STRIDE based security threats from your Confluence based functional specs and code (PRs and diffs), generate comprehensive reports using Atlassian MCP - all without leaving your editor.
+Automated, continuous STRIDE threat modeling inside VS Code and Cursor IDE — reads your Confluence design docs and code repositories, finds security threats via GitHub Copilot, and publishes results back to Confluence and Jira automatically.
 
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg)
 ![Cursor IDE](https://img.shields.io/badge/Cursor%20IDE-Compatible-brightgreen.svg)
 ![Version](https://img.shields.io/badge/version-0.0.1-orange.svg)
 
+> **⚠️ Prerequisite: GitHub Copilot Required**
+> ThreatWeaver uses **GitHub Copilot** as its AI engine. An active [GitHub Copilot subscription](https://github.com/features/copilot) is required. Without it, threat analysis commands will not function.
+
 ---
 
 ## 🎬 Demo
 
-Download the full MP4 from the latest release:
-
-![ThreatWeaver Demo](resources/ThreatWeaver_Walkthrough.mp4)
-
-https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/ThreatWeaver_Walkthrough.mp4
+https://github.com/Samiksha138/ThreatWeaver/assets/ThreatWeaver_Walkthrough.mp4
 
 ---
 
@@ -54,7 +51,6 @@ https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/ThreatWeave
 
 ### Requirements
 - **VS Code** 1.85.0+ or **Cursor IDE**
-- **GitHub Copilot** — Active subscription required
 
 ### Optional Tokens (configure as needed)
 
@@ -65,10 +61,8 @@ https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/ThreatWeave
 | GitHub PAT | Repository analysis via MCP | `ghp_...` (scope: `repo` or `public_repo`) |
 | Jira PAT + Base URL | Create Jira tickets on on-prem Jira | PAT + `https://jira.your-company.com` |
 
-> **Note**: Atlassian email and API token are **required** to publish threat models to Confluence (including draw.io diagrams). Generate your token at [id.atlassian.com](https://id.atlassian.com/manage-profile/security/api-tokens).
-
 ### Install from VSIX
-1. Download `threatweaver-latest.vsix` - [GitHub Releases](https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/threatweaver-latest.vsix)
+1. Download `threatweaver-latest.vsix` - [GitHub Releases](https://github.com/Samiksha138/ThreatWeaver/releases)
 2. Open VS Code or Cursor IDE
 3. Go to Extensions → ⋯ menu → **"Install from VSIX..."**
 4. Select the downloaded file
@@ -87,8 +81,6 @@ https://github.com/Samiksha138/ThreatWeaver/releases/download/v0.0.1/ThreatWeave
    - **🔗 Bitbucket Setup** — Bitbucket token
    - **🐙 GitHub Setup** — GitHub PAT
    - **🎫 Jira Setup (On-Prem)** — Jira PAT + base URL
-
-> **Confluence publish requires Atlassian credentials.** Set your Atlassian email and API token in Configure Credentials → Atlassian / Confluence before using "Publish to Confluence".
 
 ### Step 2 — Start MCP Servers
 
@@ -140,13 +132,7 @@ If you already used `@threat-modeler` or `/full-threat-pipeline` to create threa
 ### Step 7 — Generate Report
 
 1. Go to the **Reports** tab
-2. Click **"Generate Report"** for your feature
-3. Interactive HTML report opens with:
-   - Statistics dashboard (Critical/High/Medium/Low counts)
-   - Searchable and filterable threat table
-   - Status tracking (Open → Triaged → Mitigated → Remediated / FP / Won't Fix)
-   - Persistent comments per threat
-   - Separate sections for Repository and Design-level threats
+2. Click **"Generate Report"** for your feature → interactive HTML report opens
 
 ### Step 8 — Publish to Confluence
 
@@ -159,36 +145,9 @@ If you already used `@threat-modeler` or `/full-threat-pipeline` to create threa
 - Click **"Create Jira Issues"** to auto-populate tickets for Critical/High threats
 - Each threat → Jira issue with title, description, severity, and STRIDE category
 
-### Step 10 — Enable Watchers (Optional)
-
-See [Automated Watchers](#-automated-watchers-pr--confluence) below.
-
-### Step 11 — Stop MCP Servers
+### Step 10 — Stop MCP Servers
 
 - Click **"⏹️ Stop MCP Servers"** in the sidebar when done
-
----
-
-## 🖥️ Dashboard Tabs
-
-| Tab | Purpose |
-|-----|---------|
-| 📦 **Products** | Manage products and features — add/edit URLs, versions, folder structure |
-| ⚠️ **Threats** | Run threat analysis, create Jira issues, publish to Confluence, toggle PR/Doc watchers |
-| 📊 **Reports** | Generate HTML reports, publish to Confluence |
-| 📈 **Risk Score** | Security posture dashboard with score gauge, severity breakdown, per-feature metrics |
-
-### Commands
-
-**Sidebar** (🛡️ Shield icon):
-- 🔑 Configure Credentials | ▶️ Start MCP Servers | 🛡️ Open Dashboard | ⏹️ Stop MCP Servers
-
-**Command Palette** (`Ctrl+Shift+P`):
-- `Threat Modeling: Open Threat Modeling Dashboard`
-- `Threat Modeling: Scan Workspace for Threat Analysis`
-- `Threat Modeling: Configure MCP Credentials`
-- `Threat Modeling: Start MCP Servers`
-- `Threat Modeling: Stop MCP Servers`
 
 ---
 
@@ -215,9 +174,7 @@ Select in Copilot Chat agent picker. A persistent security architect persona for
 Type `/full-threat-pipeline` in Copilot Chat. Runs the entire pipeline end-to-end:
 Gather inputs → Fetch content → STRIDE analysis → Generate DFDs → Validate format → Save files → Publish to Confluence → Create Jira tickets
 
-## 🤖 Copilot Customizations - Cursor
-
-**Cursor IDE:** Use `@threat-modeler.md/full-threat-pipeline` command — attach the agent file and type `/full-threat-pipeline` to run the complete pipeline.
+> **Cursor IDE:** Use `@threat-modeler.md/full-threat-pipeline` — attach the agent file and type `/full-threat-pipeline` to run the complete pipeline.
 
 > **Tip:** After using the agent or skill, click **"⟳ Scan Workspace"** in the Products tab to import the results into the dashboard.
 
@@ -228,48 +185,8 @@ Gather inputs → Fetch content → STRIDE analysis → Generate DFDs → Valida
 | `stride-format` | Editing `**/threat-analysis.md` | Forces exact STRIDE output format for report parser compatibility |
 | `extension-dev` | Editing `src/**/*.ts` | Injects extension architecture context (esbuild, secrets, MCP) |
 
-### Quick Reference
-
-| Scenario | Use |
-|----------|-----|
-| One-off threat analysis | `/threat-analyze` prompt |
-| Spec changed, incremental update | `/delta-reanalyze` prompt |
-| Review a specific PR | `/pr-security-review` prompt |
-| Extended security conversation | `@threat-modeler` agent |
-| Full end-to-end pipeline | `/full-threat-pipeline` skill |
-
 ---
 
-## 📈 Risk Score Dashboard
-
-The **Risk Score** tab provides a visual security posture overview:
-
-- **Score (0–100)**: `100 − (Critical×10 + High×5 + Medium×2 + Low×1)`, clamped to 0–100
-- **Score Gauge**: Color-coded dial (green → red)
-- **Severity Stacked Bar**: Visual breakdown across all features
-- **Per-Feature Breakdown**: Individual scores and severity counts
-- **Labels**: Excellent (90+) | Good (70–89) | Fair (50–69) | Poor (30–49) | Critical (<30)
-
-Data sourced from `threat-analysis.md` files — refreshes automatically when the tab is opened.
-
----
-
-## 📊 Report Features
-
-### Interactive HTML Report
-- Statistics dashboard with severity counts
-- Searchable and filterable threat table
-- Sortable columns
-- Status tracking: Open / Triaged / Mitigated / Remediated / FP / Won't Fix
-- Persistent comments per threat
-- Separate Repository and Design-level threat sections
-- Print to PDF (`Ctrl+P`)
-- Shareable HTML file with embedded data
-
-### Severity Color Coding
-🔴 Critical | 🟠 High | 🟡 Medium | 🟢 Low
-
----
 
 ## 🔄 Automated Watchers (PR & Confluence)
 
@@ -287,18 +204,6 @@ Data sourced from `threat-analysis.md` files — refreshes automatically when th
 
 ---
 
-## ⚙️ Extension Settings
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `aiThreatModeling.mcpConfigPath` | *(auto-detect)* | Custom path to `mcp.json` file |
-| `aiThreatModeling.prWatchInterval` | `5` min | PR polling interval (1–60 min) |
-| `aiThreatModeling.confluenceWatchInterval` | `1` min | Confluence polling interval (1–60 min) |
-| `aiThreatModeling.autoUpdateEnabled` | `true` | Check GitHub Releases for updates on startup |
-| `aiThreatModeling.autoUpdateIntervalHours` | `6` hrs | Update check frequency (1–168 hrs) |
-| `aiThreatModeling.githubRepo` | `Samiksha138/ThreatWeaver` | GitHub `owner/repo` for release updates |
-
----
 
 ## 🔧 MCP Server Configuration (Reference)
 
@@ -430,7 +335,6 @@ Each product maintains a `{ProductName}/knowledge/` folder with lessons learned 
 - Each lesson has YAML frontmatter: `title`, `domain`, `tags`, `product`, `feature`, `createdAt`
 - Domains: `authentication`, `authorization`, `data-flow`, `networking`, `cryptography`, `input-validation`, `other`
 - Relevant lessons are auto-injected into subsequent analysis prompts for context-aware threat modeling
-- Command: `Threat Modeling: Add Lesson to Knowledge Base` (programmatic — used by agents/skills)
 
 ### Lesson File Format
 ```markdown
@@ -484,17 +388,56 @@ The `/full-threat-pipeline` skill uses a 9-phase state machine persisted in `pip
 | 7 | **Create Jira Tickets** | Create Jira issues for Critical/High threats |
 | 8 | **Wrapup** | Save lessons learned, finalize state |
 
-### Phase Statuses
-`not-started` → `in-progress` → `completed` | `skipped` | `failed`
-
-### Resumability
-- On re-run, the pipeline reads `pipeline-state.json` and jumps to the first incomplete phase
-- Completed phases are not re-executed
-- Failed phases can be retried
+Phase statuses: `not-started` → `in-progress` → `completed` | `skipped` | `failed`. On re-run, completed phases are skipped and failed phases are retried from the exact point of failure.
 
 ---
 
-## �🛡️ Use Cases
+## 🌍 Real-World Impact
+
+Here are concrete examples of how ThreatWeaver helps teams in practice:
+
+### Scenario 1 — New Feature, First Threat Model (15 minutes vs. 2-day workshop)
+A developer ships a new authentication module. Traditionally, a security architect schedules a whiteboard session, manually walks through the design, and produces a threat model document — taking days. With ThreatWeaver:
+1. Developer points the tool at the Confluence design page and the GitHub PR
+2. Copilot analyzes both in parallel — design-level architecture threats + code-level implementation flaws
+3. An interactive HTML report is ready in ~15 minutes, with Jira tickets auto-created for Critical findings
+
+**Impact:** Security review that used to require a meeting and a 2-day turnaround happens automatically before the PR is merged.
+
+---
+
+### Scenario 2 — Spec Changed Mid-Sprint (Delta re-analysis)
+An architect updates the authentication design in Confluence — adding a new OAuth flow. Without ThreatWeaver, nobody re-runs the threat model and the change silently introduces new risk. With ThreatWeaver:
+1. Confluence Watcher detects the page version change automatically
+2. Delta re-analysis runs against the updated spec, comparing against the existing threat model
+3. Report shows: **2 NEW threats, 1 MODIFIED, 14 UNCHANGED** — analysts only review what changed
+
+**Impact:** No threats slip through on spec updates. Existing threat IDs and audit history are preserved — no rework.
+
+---
+
+### Scenario 3 — Pre-Release Security Gate (Catching AI hallucinations)
+Before a product release, the team publishes a threat model to Confluence. The AI produces a result, but the validation gate flags it:
+- ❌ Only 2 of 6 STRIDE categories covered
+- ⚠️ 85% of findings are Critical (statistically implausible — likely hallucination)
+
+ThreatWeaver blocks the publish and prompts for re-analysis. The second run passes all checks cleanly.
+
+**Impact:** Prevents incomplete or hallucinated threat models from being published as authoritative security documents.
+
+---
+
+### Scenario 4 — Continuous Security in a Monorepo (PR Watcher)
+A large team merges 10–15 PRs per day. Manually reviewing each for security impact is impossible. With PR Watcher enabled:
+1. Every new or updated PR is detected automatically
+2. Copilot reviews only the changed lines — not the whole codebase
+3. Security-relevant findings surface directly in the developer's Jira backlog
+
+**Impact:** Security review scales with team velocity — no dedicated security bottleneck for every PR.
+
+---
+
+## 🛡️ Use Cases
 
 | Role | How They Use It |
 |------|----------------|
@@ -507,28 +450,13 @@ The `/full-threat-pipeline` skill uses a 9-phase state machine persisted in `pip
 ## 📋 Changelog
 
 ### v0.0.1 (Current)
-- Initial public release as **ThreatWeaver**
-- **Multiple Confluence Pages** — add multiple URLs per feature
-- **Flexible Repo Analysis** — PR, sub-directory, or whole-repo modes
-- **Risk Score Dashboard** — posture score (0–100), gauge, severity charts, per-feature breakdown
-- **Publish to Confluence** — writeback with design/code threat segregation + drawio DFD attachment
-- **Jira Integration** — auto-populate tickets for Critical/High threats
-- **PR Watcher** — per-feature polling, auto-triggers analysis on new/updated PRs
-- **Confluence Watcher** — per-feature polling, delta re-analysis with change summary
-- **Scan Workspace** — auto-import products/features created by `@threat-modeler` agent into the dashboard
-- **Knowledge Base** — per-product lessons learned, auto-injected into analysis prompts
-- **Validation Gate** — pre-publish quality checks (STRIDE coverage, severity distribution, mitigations, DFD alignment)
-- **Pipeline State Machine** — resumable 9-phase pipeline for `/full-threat-pipeline` skill
-- **Copilot Customizations** — prompts, agent, skill, and auto-loaded instructions
-- **Auto-Update** — self-hosted via GitHub Releases
-- **UI Improvements** — tabbed dashboard, inline watchers, collapsible sections, severity colors
+Initial public release. See [Key Features](#-key-features) for the full feature list.
 
 ---
 
 ## 💬 Support
 
 - **Issues**: [GitHub Issues](https://github.com/Samiksha138/ThreatWeaver/issues) or email samiksha138@gmail.com
-- **Documentation**: Available in the repository
 
 ---
 
