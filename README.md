@@ -63,7 +63,7 @@ https://github.com/Samiksha138/ThreatWeaver/assets/ThreatWeaver_Walkthrough.mp4
 
 ### Install from VSIX
 1. Download `threatweaver-latest.vsix` - [GitHub Releases](https://github.com/Samiksha138/ThreatWeaver/releases)
-2. Open VS Code or Cursor IDE
+2. Open VS Code or Cursor IDE.
 3. Go to Extensions → ⋯ menu → **"Install from VSIX..."**
 4. Select the downloaded file
 
